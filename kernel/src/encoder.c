@@ -7,6 +7,8 @@
 #include <stdint.h>
 #include <unistd.h>
 
+#define UNUSED __attribute__((unused))
+
 #define NUM_ENCODERS UINT32_C(2)
 #define PIN_NUM(side, encoder) \
     encoder_attributes[(side)].pins.encoder_pin_##encoder.num
@@ -48,7 +50,7 @@ void encoder_init(enum encoder_mapping encoder, struct encoder_pin_attr *attr)
     nvic_irq(attr->encoder_pin_b.irq_num, IRQ_ENABLE);
 }
 
-void encoder_stop(enum encoder_mapping encoder)
+void encoder_stop(UNUSED enum encoder_mapping encoder)
 {
 }
 

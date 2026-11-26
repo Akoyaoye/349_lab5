@@ -3,6 +3,8 @@
 #include <printk.h>
 #include <rcc.h>
 
+#define UNUSED __attribute__((unused))
+
 /** @brief EXTI register map. */
 struct exti
 {
@@ -30,15 +32,15 @@ struct syscfg
 
 #define RCC_APB2_SYSCFG_EN (1 << 14)
 
-void enable_exti(gpio_port port, uint32_t channel, uint32_t edge)
+void enable_exti(UNUSED gpio_port port, UNUSED uint32_t channel, UNUSED uint32_t edge)
 {
 }
 
-void disable_exti(uint32_t channel)
+void disable_exti(UNUSED uint32_t channel)
 {
 }
 
-void exti_clear_pending_bit(uint32_t channel)
+void exti_clear_pending_bit(UNUSED uint32_t channel)
 {
 }
 
