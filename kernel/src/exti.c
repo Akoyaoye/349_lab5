@@ -32,16 +32,18 @@ struct syscfg
 
 #define RCC_APB2_SYSCFG_EN (1 << 14)
 
-void enable_exti(UNUSED gpio_port port, UNUSED uint32_t channel, UNUSED uint32_t edge)
-{
+void enable_exti(UNUSED gpio_port port, UNUSED uint32_t channel, UNUSED uint32_t edge) {
+ 
 }
 
-void disable_exti(UNUSED uint32_t channel)
-{
+void disable_exti(uint32_t channel) {
+
 }
 
-void exti_clear_pending_bit(UNUSED uint32_t channel)
-{
+void exti_clear_pending_bit(UNUSED uint32_t channel) {
+    struct exti_reg *exti = EXTI_BASE;
+
+    exti->pr |= (1 << channel);
 }
 
 // Note: Add your IRQ handlers here

@@ -19,6 +19,8 @@
 #define TIM4_IRQ 30
 #define TIM5_IRQ 50
 
+#define PWM_PRESCALER 160
+
 #include <unistd.h>
 
 /*
