@@ -159,27 +159,6 @@ void timer_disable(int timer) {
   }
 }
 
-void timer_start_pwm(uint32_t period, uint32_t duty_cycle, uint32_t timer, uint32_t channel){
-
-  switch (timer){
-    case TIM2_INT_NUM:
-
-      return; 
-
-    case TIM3_INT_NUM:
-
-      return; 
-
-    case TIM4_INT_NUM:
-
-      return; 
-
-    case TIM5_INT_NUM:
-
-      return;
-  }
-}
-
 
 void timer_clear_interrupt_bit(int timer) {
   switch (timer){

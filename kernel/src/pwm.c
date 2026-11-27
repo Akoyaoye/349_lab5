@@ -50,10 +50,10 @@ uint8_t IS_COMP = 0;
 
 struct tim2_5* const timer_base_pwm[] = {(void *)0x0,   // N/A - Don't fill out
                                      (void *)0x0,   // N/A - Don't fill out
-                                     (void *)-1,    // TODO: fill out address for TIMER 2
-                                     (void *)-1,    // TODO: fill out address for TIMER 3
-                                     (void *)-1,    // TODO: fill out address for TIMER 4
-                                     (void *)-1};   // TODO: fill out address for TIMER 5
+                                     (void *)0x40000000,  //m4_ref pg 39
+                                     (void *)0x40000400,  //m4_ref pg 39
+                                     (void *)0x40000800,  //m4_ref pg 39
+                                     (void *)0x40000C00}; //m4_ref pg 39
 
 void timer_start_pwm(uint32_t period, uint32_t duty_cycle, uint32_t timer, uint32_t channel) {
     (void)period;
